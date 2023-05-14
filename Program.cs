@@ -4,19 +4,15 @@
     {
         static void Main()
         {
-            int gold;
-            int crystals;
-            int pricePerCrystal = 8;
-            bool canPay;
-            Console.WriteLine($"добро пожаловать в магазин, сегодня стоимость кристалов составляет {pricePerCrystal} золота.");
-            Console.Write("сколько у вас золота? ");
-            gold = Convert.ToInt32(Console.ReadLine());
-            Console.Write("сколько вы хотите купить кристалов?");
-            crystals = Convert.ToInt32(Console.ReadLine());
-            canPay = gold >= crystals * pricePerCrystal;
-            crystals *= (Convert.ToInt32(canPay));
-            gold -= crystals * pricePerCrystal;
-            Console.WriteLine($"У вас осталось {gold} золота, у вас в наличии {crystals} кристалов");
+            int countPeople;
+            int receptionTime = 10;
+            int minutesInHour = 60;
+            Console.WriteLine("Добро пожаловать в поликлинику!");
+            Console.Write("Время приема составляет 10 минут, сколько перед вами людей: ");
+            countPeople = Convert.ToInt32(Console.ReadLine());
+            int waitingTimeMinutes = countPeople * receptionTime % minutesInHour;
+            int waitingTimeHour = countPeople * receptionTime / minutesInHour;
+            Console.WriteLine($"Примерное время ожидания составит {waitingTimeHour} часов и {waitingTimeMinutes} минут!");
         }
     }
 }
