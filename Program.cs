@@ -1,18 +1,29 @@
-﻿﻿namespace test
+﻿using System.Net.Http.Headers;
+
+namespace test
 {
     class Program
     {
         static void Main()
         {
-            int countPeople;
-            int receptionTime = 10;
-            int minutesInHour = 60;
-            Console.WriteLine("Добро пожаловать в поликлинику!");
-            Console.Write("Время приема составляет 10 минут, сколько перед вами людей: ");
-            countPeople = Convert.ToInt32(Console.ReadLine());
-            int waitingTimeMinutes = countPeople * receptionTime % minutesInHour;
-            int waitingTimeHour = countPeople * receptionTime / minutesInHour;
-            Console.WriteLine($"Примерное время ожидания составит {waitingTimeHour} часов и {waitingTimeMinutes} минут!");
+            string theFinalWord = "exit";
+            string userImrut;
+            for(int i = 1; i > 0; i++)
+            {
+                Console.Write("Введите слово завершающие цикл: ");
+                userImrut = Console.ReadLine();
+                if (userImrut == theFinalWord)
+                {
+                    Console.WriteLine("Завершаем цикл!");
+                    break;
+                }
+
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
         }
     }
 }
