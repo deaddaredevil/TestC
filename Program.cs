@@ -6,24 +6,15 @@ namespace test
     {
         static void Main()
         {
-            string theFinalWord = "exit";
-            string userImrut;
-            for(int i = 1; i > 0; i++)
+            int startCycle = 5;
+            int endCycle = 100;
+            int stepCycle = 7;
+
+            for (int i = startCycle; i < endCycle; i += stepCycle)
             {
-                Console.Write("Введите слово завершающие цикл: ");
-                userImrut = Console.ReadLine();
-                if (userImrut == theFinalWord)
-                {
-                    Console.WriteLine("Завершаем цикл!");
-                    break;
-                }
-
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
-
+                Console.Write(i + " ");
+            } 
+            //Данный цикл выбран потому что мы знаем конечную точку и шаг, в отличии от while где неизвестно колличество цикла.
         }
     }
 }
