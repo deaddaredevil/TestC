@@ -6,14 +6,19 @@ namespace test
     {
         static void Main()
         {
-            int startNumber = 5;
-            int endCycle = 96;
-            int stepCycle = 7;
+            Random rand = new Random();
+            int number = rand.Next(0, 101);
+            int startNumber = number;
+            int stepNumber = 3;
 
-            for (int i = startNumber; i <= endCycle; i += stepCycle)
+            Console.WriteLine(number);
+
+            while (startNumber > 0)
             {
-                Console.Write(i + " ");
-            } 
+                number += startNumber - stepNumber;
+                startNumber-=stepNumber;        
+                Console.WriteLine(number);
+            }
         }
     }
 }
