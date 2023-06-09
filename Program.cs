@@ -6,17 +6,19 @@ namespace test
     {
         static void Main()
         {
-            Random rand = new Random();
-            int number = rand.Next(0, 101);
+            Random random = new Random();
+            int minNumber = 0;
+            int maxNumber = 100;
+            int number = random.Next(minNumber, maxNumber +1);
             int startNumber = number;
-            int stepNumber = 3;
+            int divisorNumber = 3;
 
             Console.WriteLine(number);
 
-            while (startNumber > 0)
+            for (int i = number; startNumber > 0; i = divisorNumber) 
             {
-                number += startNumber - stepNumber;
-                startNumber-=stepNumber;        
+                number += startNumber - divisorNumber;
+                startNumber-=divisorNumber;        
                 Console.WriteLine(number);
             }
         }
