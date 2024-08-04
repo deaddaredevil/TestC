@@ -6,22 +6,25 @@ namespace test
     {
         static void Main()
         {
-            Random random = new Random();
-            int minNumber = 0;
-            int maxNumber = 100;
-            int number = random.Next(minNumber, maxNumber + 1);
-            int divisorNumber1 = 3;
-            int divisorNumber2 = 5;
-            int sumNumbers = default;
+            string password = "QW1234er";
+            int numberOfAttempts = 3;
+            string userInput;
 
-            Console.WriteLine("начальное число " + number);
+            Console.WriteLine("Добро пожаловать на платформу!");
 
-            for (int i = 0; i <= number; ++i)
+            for (int i = 0; i < numberOfAttempts; i++)
             {
-                if (i % divisorNumber1 == 0 || i % divisorNumber2 == 0)
+                Console.Write("Введите пароль: ");
+                userInput = Console.ReadLine();
+                if (userInput == password)
                 {
-                    sumNumbers += i;
-                    Console.WriteLine(sumNumbers);
+                    Console.WriteLine("Добро пожаловать на аккаунт");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка. Пароль неверный.");
+                    Console.WriteLine("У вас осталось " + (numberOfAttempts - (i + 1)));
                 }
             }
         }
