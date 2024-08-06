@@ -9,10 +9,9 @@ namespace test
             string password = "QW1234er";
             int numberOfAttempts = 3;
             string userInput;
-
             Console.WriteLine("Добро пожаловать на платформу!");
 
-            for (int i = 0; i < numberOfAttempts; i++)
+            for (int i = 0; i <= numberOfAttempts; i++)
             {
                 Console.Write("Введите пароль: ");
                 userInput = Console.ReadLine();
@@ -24,9 +23,10 @@ namespace test
                 else
                 {
                     Console.WriteLine("Ошибка. Пароль неверный.");
-                    Console.WriteLine("У вас осталось " + (numberOfAttempts - (i + 1)));
+                    numberOfAttempts -= i;
                 }
             }
+            Console.WriteLine("Вход заблокирован. Обратитесь в поддержку.");
         }
     }
 }
