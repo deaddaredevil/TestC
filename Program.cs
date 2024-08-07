@@ -11,7 +11,7 @@ namespace test
             string userInput;
             Console.WriteLine("Добро пожаловать на платформу!");
 
-            for (int i = 0; i <= numberOfAttempts; i++)
+            for (int i = 1; i <= numberOfAttempts; ++i)
             {
                 Console.Write("Введите пароль: ");
                 userInput = Console.ReadLine();
@@ -24,7 +24,6 @@ namespace test
                 else
                 {
                     Console.WriteLine("Ошибка. Пароль неверный.");
-                    numberOfAttempts--;
                 }
             }
 
