@@ -15,6 +15,7 @@ namespace test
             {
                 Console.Write("Введите пароль: ");
                 userInput = Console.ReadLine();
+
                 if (userInput == password)
                 {
                     Console.WriteLine("Добро пожаловать на аккаунт");
@@ -23,9 +24,10 @@ namespace test
                 else
                 {
                     Console.WriteLine("Ошибка. Пароль неверный.");
-                    numberOfAttempts -= i;
+                    numberOfAttempts--;
                 }
             }
+
             Console.WriteLine("Вход заблокирован. Обратитесь в поддержку.");
         }
     }
