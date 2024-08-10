@@ -6,28 +6,26 @@ namespace test
     {
         static void Main()
         {
-            string password = "QW1234er";
-            int numberOfAttempts = 3;
-            string userInput;
-            Console.WriteLine("Добро пожаловать на платформу!");
+            Random random = new Random();
+            int initialNumber = random.Next(1,28);
+            int maximumNumber = 1000;
+            int minimumNumber = 99;
+            int sumMultiplicityNunber = 0;
+            int multipleNumber = initialNumber;
 
-            for (int i = 1; i <= numberOfAttempts; ++i)
+            while (multipleNumber <= maximumNumber)
             {
-                Console.Write("Введите пароль: ");
-                userInput = Console.ReadLine();
+                multipleNumber += initialNumber;
 
-                if (userInput == password)
+                if (multipleNumber <= minimumNumber)
                 {
-                    Console.WriteLine("Добро пожаловать на аккаунт");
-                    break;
+                    continue;
                 }
-                else
-                {
-                    Console.WriteLine("Ошибка. Пароль неверный.");
-                }
+
+                sumMultiplicityNunber++;
             }
 
-            Console.WriteLine("Вход заблокирован. Обратитесь в поддержку.");
+            Console.WriteLine($"Колличество трехзначных чисел кратных {initialNumber} будет {sumMultiplicityNunber} .");
         }
     }
 }
